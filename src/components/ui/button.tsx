@@ -19,8 +19,8 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         // Mycelial FunGuy specific variants
-        hero: "bg-accent-blue text-white shadow-lg hover:bg-accent-blue/90 rounded-full px-6 py-3 font-semibold",
-        mushroom: "bg-accent-green text-white shadow-lg hover:bg-accent-green/90 rounded-full px-6 py-3 font-semibold",
+        hero: "bg-white/10 text-white border border-white/20 hover:bg-white/20 backdrop-blur-sm transition-all duration-300",
+        mushroom: "bg-gradient-to-r from-accent-pink to-accent-blue text-white shadow-lg hover:shadow-glow transition-all duration-300 hover:scale-105",
         pill: "bg-white/20 text-foreground border border-white/30 hover:bg-white/30 rounded-full px-4 py-2"
       },
       size: {

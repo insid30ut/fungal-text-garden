@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 
 // Mock blog post data
 const blogPosts = [
@@ -122,11 +123,9 @@ const Blog = () => {
               </div>
             </header>
             
-            <div 
-              className="text-foreground prose-headings:text-foreground prose-strong:text-foreground prose-code:text-foreground"
-              dangerouslySetInnerHTML={{ 
-                __html: post.content.replace(/\n/g, '<br/>').replace(/#+\s*(.*?)(<br\/>|$)/g, '<h2 class="text-2xl font-bold mt-6 mb-4 text-primary">$1</h2>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>') 
-              }} 
+            <MarkdownRenderer 
+              content={post.content}
+              className="text-foreground"
             />
           </article>
         </div>

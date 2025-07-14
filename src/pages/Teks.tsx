@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 
 // Mock teks data with detailed instructions
 const teksData = [
@@ -339,21 +340,9 @@ const Teks = () => {
               <p className="text-muted-foreground">Last updated: {new Date(tek.lastUpdated).toLocaleDateString()}</p>
             </header>
             
-            <div 
-              className="text-foreground prose-headings:text-foreground prose-strong:text-foreground prose-code:text-foreground prose-table:text-foreground"
-              dangerouslySetInnerHTML={{ 
-                __html: tek.content
-                  .replace(/\n/g, '<br/>')
-                  .replace(/^#{1}\s*(.*?)(<br\/>|$)/gm, '<h1 class="text-3xl font-bold mt-8 mb-6 text-primary">$1</h1>')
-                  .replace(/^#{2}\s*(.*?)(<br\/>|$)/gm, '<h2 class="text-2xl font-bold mt-6 mb-4 text-primary">$1</h2>')
-                  .replace(/^#{3}\s*(.*?)(<br\/>|$)/gm, '<h3 class="text-xl font-semibold mt-4 mb-3 text-foreground">$1</h3>')
-                  .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-primary">$1</strong>')
-                  .replace(/\*(.*?)\*/g, '<em>$1</em>')
-                  .replace(/`([^`]+)`/g, '<code class="bg-muted px-1 py-0.5 rounded text-sm">$1</code>')
-                  .replace(/^\| (.*?) \|$/gm, '<tr><td class="border px-2 py-1">$1</td></tr>')
-                  .replace(/^\|------.*$/gm, '')
-                  .replace(/^- (.*?)(<br\/>|$)/gm, '<li class="ml-4">• $1</li>')
-              }} 
+            <MarkdownRenderer 
+              content={tek.content}
+              className="text-foreground"
             />
           </article>
         </div>
