@@ -11,6 +11,8 @@ import Teks from "./pages/Teks";
 import About from "./pages/About";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
+import NewBlogPost from "./pages/NewBlogPost";
+import NewTek from "./pages/NewTek";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +32,8 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/blog/new" element={<NewBlogPost />} />
+            <Route path="/admin/teks/new" element={<NewTek />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

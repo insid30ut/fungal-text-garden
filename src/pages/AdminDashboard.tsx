@@ -50,7 +50,7 @@ export default function AdminDashboard() {
             <CardContent>
               <div className="flex items-center justify-between">
                 <p className="text-2xl font-bold">Manage</p>
-                <Button size="sm">
+                <Button size="sm" onClick={() => navigate('/admin/blog/new')}>
                   <Plus className="mr-2 h-4 w-4" />
                   New Post
                 </Button>
@@ -69,7 +69,7 @@ export default function AdminDashboard() {
             <CardContent>
               <div className="flex items-center justify-between">
                 <p className="text-2xl font-bold">Manage</p>
-                <Button size="sm">
+                <Button size="sm" onClick={() => navigate('/admin/teks/new')}>
                   <Plus className="mr-2 h-4 w-4" />
                   New Tek
                 </Button>
