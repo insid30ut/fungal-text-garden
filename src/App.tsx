@@ -13,6 +13,8 @@ import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import NewBlogPost from "./pages/NewBlogPost";
 import NewTek from "./pages/NewTek";
+import BlogPost from "./pages/BlogPost";
+import TekPost from "./pages/TekPost";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +36,8 @@ const App = () => (
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
             <Route path="/admin/blog/new" element={<NewBlogPost />} />
             <Route path="/admin/teks/new" element={<NewTek />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
+            <Route path="/teks/:id" element={<TekPost />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
